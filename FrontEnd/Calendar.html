@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+		<head>
+			<title>Working Calendar</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+			<link rel="stylesheet" type="text/css" href="CSS/Table.css">
+			
+		</head>
+
+
+		<body>
+			
+			<header>
+				<!-- Header content goes here -->
+			</header>
+
+			<div class="caption-container">
+				
+				<div class="caption-box"></div>
+			
+				<button class="calendar-button" id="calendar-AL-button">
+						Apply
+				</button>	
+
+				<button class="calendar-button" id="calendar-Remove-button">
+						Remove
+				</button>	
+				
+				<button class="calendar-button" id="calendar-backward-button">
+						&lt;
+				</button>
+
+				<button class="calendar-button" id="calendar-forward-button">
+						&gt;
+				</button>
+			
+			</div>
+
+			
+			
+			
+		
+			
+			<table id="employee-calendar-table">
+				
+				<thead id="employee-calendar-table-thead">
+						<tr>
+							<th scope="col">Sun</th>
+							<th scope="col">Mon</th>
+							<th scope="col">Tue</th>
+							<th scope="col">Wed</th>
+							<th scope="col">Thu</th>
+							<th scope="col">Fri</th>
+							<th scope="col">Sat</th>
+						</tr>
+				</thead>
+
+			</table>
+
+			
+			<div class="content-container">
+				
+				<div class = "employee-details-box">
+					<h2>Employee Details</h2>
+					<p>Name: <span id="employee-name"></span></p>
+					<p>ID: <span id="employee-id"></span></p>
+					<p>Hired Date: <span id="employee-hired-date"></span></p>
+				</div>	
+
+				<div class = "leave-details-box">
+					<h2>Leave Details</h2>
+					<p>Annual Entitlement: <span id="employee-entitlement"></span></p>
+					<p>Applied Leaves: <span id="employee-applied"></span></p>
+				</div>
+			
+			</div>	
+
+			
+			<script type="module"> 
+
+				
+				//Import employee object from employeeCreator.js
+				import { employee } from '../FrontEnd/JavaScript/EmployeeCreatorLab.js';
+               
+				//Import calendar object from calendarCreator.js
+				import { calendar} from '../Frontend/JavaScript/CalendarCreator.js';
+
+				
+				// Fill employee details
+				document.getElementById('employee-name').textContent = employee.name;
+				document.getElementById('employee-id').textContent = employee.ID;
+				document.getElementById('employee-hired-date').textContent = (employee.startDate).toDateString();
+
+				document.getElementById('employee-entitlement').textContent = employee.entitlement + " days";
+				document.getElementById('employee-applied').textContent = employee.getTotalLeavesApplied() + " days";
+
+
+				document.title = `Working Calendar for ${employee.name}`;
+
+				console.log(employee);
+				
+				console.log(calendar);
+				
+				
+
+				calendar.loadCalendarTable();
+				calendar.loadCalendarButtonsListener();
+
+				
+
+			</script>
+
+
+
+		</body>
+</html>

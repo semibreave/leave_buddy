@@ -1,0 +1,88 @@
+/* Styling for the calendar table */
+
+.caption-container{
+	display: flex;
+	flex-direction: row;
+}
+
+.caption-box{
+
+	width: 282px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.calendar-button {
+	margin-right: 5px;
+	margin-bottom: 2px;
+}
+
+table {
+	
+	border-collapse: collapse;
+	/*width: 70%;*/
+}
+
+
+th {
+	background-color: #eee;
+	border: 1px solid #ccc;
+	font-weight: bold;
+	padding: 10px;
+	text-align: center;
+}
+
+td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.tdAL{
+	background-color:yellow;
+}
+
+.clickedTD{
+
+	font-weight: bold;
+	font-style: italic;
+	background-color: #eee;
+}
+
+.clickedAL {
+	font-weight: bold;
+	font-style:italic;
+	background-color: rgb(175, 172, 7);
+}
+
+
+.tooltip {
+	position: absolute;
+	background-color: #f9f9f9;
+	border: 1px solid #ccc;
+	padding: 5px;
+	border-radius: 4px;
+	font-size: 12px;
+  }
+  
+
+  .content-container{
+	display: flex;
+	flex-direction: row;
+	margin-top: 20px;
+}
+
+.employee-details-box {
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.leave-details-box {
+	border: 1px solid black;
+	padding: 10px;
+	margin-left: 20px;
+}
+
+
+  

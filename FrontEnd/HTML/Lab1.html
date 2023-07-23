@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<p id="employeeOBJ"></p>
+
+<script type="module">
+
+//Import employee object from employeeCreator.js
+import { myPromise } from '../JavaScript/EmployeeCreatorLab.js';
+
+
+     myPromise.then(
+
+                        (result) => {
+
+                              console.log(result);
+                              const empOBJ = document.getElementById("employeeOBJ");
+                              empOBJ.innerText = result.name + " " +  result.startDate;
+                        }
+     );
+
+
+
+    
+</script>
+
+</body>
+
+
+</html>
